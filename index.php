@@ -8,6 +8,7 @@ Debian Wheezy sh4 for 網樂通(NextVODBox)
 <meta name="description" content="網樂通用的Debian! Unofficial Debian Wheezy SH4 for Nextvodbox" />
 <meta name="keywords" content="網樂通, nextvodbox, wheezy, sh4, OS, Debian, Linux, RISC, Download" />
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" rel="stylesheet">
 <style>
 body {background-color:#4D4D4D;font-size:xx-large;color:#FF0066;}
 a, a:hover{color:#000066}
