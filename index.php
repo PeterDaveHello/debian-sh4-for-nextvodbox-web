@@ -1,23 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>
-Debian Wheezy sh4 for 網樂通(NextVODBox)
-</title>
-<meta name="description" content="網樂通用的Debian! Unofficial Debian Wheezy SH4 for Nextvodbox" />
-<meta name="keywords" content="網樂通, nextvodbox, wheezy, sh4, OS, Debian, Linux, RISC, Download" />
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" rel="stylesheet">
-<style>
-body {background-color:#4D4D4D;font-size:xx-large;color:#FF0066;}
-a, a:hover{color:#000066}
-h2{color:#FFFF00;}
-</style>
-</head>
-<body>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<? require_once("header.php");?>
+
 <div>
 這些是給被停止服務的網樂通使用的, 自動刷機檔解壓縮後可以用Win32 Disk Imager或DD等方式寫入隨身碟後對網樂通進行還原區域重建, 再利用還原功能建出Debian wheezy sh4來, 會自己進去掛載分割區的可以直接拿rootfs還原檔去覆蓋原本的還原檔, apt repo預設不用修改, 除非你是使用其他版本的debian刷進去但想用這邊的套件那就可以掛上這一串
 <p>
@@ -38,5 +20,5 @@ MD5:1671c292c17feda658b2362db41ecc81<br />
 <font color="#FF4791">deb</font> <font color="#FF8330">http://forum.cse.yzu.edu.tw/debian-sh4/</font> <font color="#9147FF">wheezy</font> <font color="#FF4791">all</font><br />
 「使用以上兩個版本灌出來的debian不須特別調整此設定, 這是讓其他版的debian也能使用到我們套件的套件庫」
 </div>
-</body>
-</html>
+
+<? require_once("footer.php");?>
