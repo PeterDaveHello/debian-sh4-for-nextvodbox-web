@@ -37,12 +37,5 @@ MD5:1671c292c17feda658b2362db41ecc81<br />
 <font color="#FF4791">deb</font> <font color="#FF8330">http://forum.cse.yzu.edu.tw/debian-sh4/</font> <font color="#9147FF">wheezy</font> <font color="#FF4791">all</font><br />
 「使用以上兩個版本灌出來的debian不須特別調整此設定, 這是讓其他版的debian也能使用到我們套件的套件庫」
 </div>
-<script>
-jQuery(function($){
-  $("a").focus(function(){
-      $(this).blur();
-  });
-});
-</script>
 </body>
 </html>
