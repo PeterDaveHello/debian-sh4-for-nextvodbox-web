@@ -29,7 +29,7 @@
         <ul class="nav navbar-nav">
           <li><a href="index.php">首頁</a></li>
           <li><a href="download.php">下載</a></li>
-          <li><a href="about.php">關於</a></li>
+          <li><a href="resource.php">資源</a></li>
         </ul>
       </div>
     </nav>
