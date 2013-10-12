@@ -1,2 +1,1 @@
-Options +Indexes
-ErrorDocument 404 default
+ErrorDocument 404 /404.php
