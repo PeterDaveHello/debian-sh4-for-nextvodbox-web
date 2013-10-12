@@ -1,5 +1,5 @@
 <? require_once("header.php");?>
 
-  <!-- content -->
+        <!-- content -->
 
 <? require_once("footer.php");?>
