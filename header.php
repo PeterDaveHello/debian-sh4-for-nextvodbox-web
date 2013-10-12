@@ -8,9 +8,6 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" rel="stylesheet" />
     <style>
-      body {background-color:#4D4D4D; font-size:xx-large; color:#FF0066;}
-      a, a:hover {color:#000066;}
-      h2 {color:#FFFF00;}
     </style>
   </head>
   <body>
