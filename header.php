@@ -27,6 +27,9 @@
 
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
+          <li><a href="index.php">首頁</a></li>
+          <li><a href="download.php">下載</a></li>
+          <li><a href="about.php">關於</a></li>
         </ul>
       </div>
     </nav>
