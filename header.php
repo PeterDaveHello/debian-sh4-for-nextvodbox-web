@@ -25,11 +25,16 @@
         <a class="navbar-brand" href="index.php">Debian-sh4 for NextVODBox</a>
       </div>
 
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <div class="collapse navbar-collapse navbar-ex1-collapse pull-right">
         <ul class="nav navbar-nav">
           <li><a href="index.php">首頁</a></li>
           <li><a href="download.php">下載</a></li>
           <li><a href="resource.php">資源</a></li>
+          <li><a href="handbook.php">教學</a></li>
+          <li><a href="sponsor.php">贊助</a></li>
+          <li><a href="activity.php">活動</a></li>
+          <li><a href="faq.php">常見問題</a></li>
+          <li><a href="about.php">關於</a></li>
         </ul>
       </div>
     </nav>
