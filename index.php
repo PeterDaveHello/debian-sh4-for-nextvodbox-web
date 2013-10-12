@@ -1,25 +1,15 @@
 <? require_once("header.php");?>
 
-  <div>
-    這些是給被停止服務的網樂通使用的, 自動刷機檔解壓縮後可以用Win32 Disk Imager或DD等方式寫入隨身碟後對網樂通進行還原區域重建, 再利用還原功能建出Debian wheezy sh4來, 會自己進去掛載分割區的可以直接拿rootfs還原檔去覆蓋原本的還原檔, apt repo預設不用修改, 除非你是使用其他版本的debian刷進去但想用這邊的套件那就可以掛上這一串
-    <p>
-      <h2>自動刷機檔(一般刷機都是使用這個即可,已經包含下面兩樣了):</h2>
-      <a href="download/new-debian-wheezy-sh4.img.7z">new-debian-wheezy-sh4.img.7z</a><br />
-      MD5:b1dc7c51f92b1c988829bb3c7ce826bc<br />
-      (解壓縮後MD5:cde3c29d335a634e06fee99d635ffb12)<br />
-      「使用方式請參考sh4twbox的刷機流程, 總共要用reset還原兩次, 一次寫入還原檔一次還原」
-      <hr />
-
-      <h2>rootfs還原檔:</h2>
-      <a href="download/target.tgz">target.tgz</a></br>
-      MD5:1671c292c17feda658b2362db41ecc81<br />
-      「單還原檔, 可以手動掛載sda1後自行置換原先的target.tgz」
-      <hr />
-
-      <h2>apt repositry:</h2>
-      <font color="#FF4791">deb</font> <font color="#FF8330">http://forum.cse.yzu.edu.tw/debian-sh4/</font> <font color="#9147FF">wheezy</font> <font color="#FF4791">all</font><br />
-      「使用以上兩個版本灌出來的debian不須特別調整此設定, 這是讓其他版的debian也能使用到我們套件的套件庫」
-    </p>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="page-header">
+        <p class="lead text-primary">
+          網樂通機上盒本來是壹電視免費借給台灣用戶的網路電視數位機上盒，透過網路，可以隨選隨看各樣的電影或是收聽電台，並且可以觀賞部份高畫質頻道，如：壹電視新聞台等，因為壹傳媒主席黎智英決定退出台灣市場後而停止服務，而壹傳媒也很大方的把網樂通無償贈與當初申請租借的使用者，自此後相繼有高手投入開發，希望能解放網樂通剩下的價值，從而有sh4twbox, NextPBX, Wonderbox等應用。
+        </p>
+        <p class="text-info">
+          本專案由"<strong>網樂通開發/研究/貢獻/準開發者</strong>"社團發起，希望能在網樂通上面移植一套完整的Debian GNU/Linux作業系統，讓網樂通能有更好的發揮，也讓新手更容易加入與學習。
+        </p>
+      </div>
+    </div>
   </div>
-
 <? require_once("footer.php");?>
