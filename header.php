@@ -29,6 +29,7 @@
 
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-      </ul>
+        </ul>
+      </div>
     </nav>
     <br />
