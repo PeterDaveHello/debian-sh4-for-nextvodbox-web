@@ -1,5 +1,7 @@
 <? require_once("template/header.php");?>
 
+    <center><img src="img/box.png"></center>
+      <hr />
         <p class="lead text-primary">
           <a href="http://zh.wikipedia.org/zh-tw/%E7%B6%B2%E6%A8%82%E9%80%9A">網樂通</a>機上盒本來是壹電視免費借給台灣用戶的網路電視數位機上盒，透過網路，可以隨選隨看各樣的電影或是收聽電台，並且可以觀賞部份高畫質頻道，如：壹電視新聞台等，因為壹傳媒主席黎智英決定退出台灣市場後而停止服務，而壹傳媒也很大方的把網樂通無償贈與當初申請租借的使用者，自此後相繼有高手投入開發，希望能解放網樂通剩下的價值，從而有<a href="https://code.google.com/p/sh4twbox/">sh4twbox</a>, <a href="http://nextpbx.osslab.com.tw">NextPBX</a>, <a href="http://www.wonderbox.net.tw/tw/nasbox.html">Wonderbox</a>等應用。
         </p>
