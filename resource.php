@@ -1,4 +1,4 @@
-<? require_once("header.php");?>
+<? require_once("template/header.php");?>
 
   <p class="text-primary">
     改機以及使用、開發相關資源：
@@ -32,4 +32,4 @@
     </ul>
   </p>
 
-<? require_once("footer.php");?>
+<? require_once("template/footer.php");?>

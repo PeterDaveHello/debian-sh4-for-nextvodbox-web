@@ -1,4 +1,4 @@
-<? require_once("header.php");?>
+<? require_once("template/header.php");?>
 
   <div>
     自動刷機檔解壓縮後可以用Win32 Disk Imager或DD等方式寫入隨身碟後對網樂通進行還原區域重建, 再利用還原功能把Debian wheezy sh4灌起來, 會自己進去掛載分割區的話可以直接拿rootfs還原檔去覆蓋原本的還原檔, apt repo預設不用修改, 除非你是使用其他版本的debian刷進去但想用這邊所編譯的套件那就可以掛上這一串
@@ -22,4 +22,4 @@
     </p>
   </div>
 
-<? require_once("footer.php");?>
+<? require_once("template/footer.php");?>
