@@ -23,7 +23,7 @@
             <li>先下載<strong>自動刷機檔刷</strong>，解壓縮後使用<a href="http://sourceforge.net/projects/win32diskimager/"><strong>Win32DiskImager</strong></a>，(在windows系統)或<a href="http://linux.vbird.org/linux_basic/0240tarcompress.php#dd"><strong>dd</strong></a>(在linux,Mac,FreeBSD等*nix系統)等方式寫入隨身碟</li>
             <li>使用方式<a href="https://docs.google.com/document/d/1UWJxV8N8fbvjcvePgrruRmZuJwPseCyHZvebNddeYWc/pub#h.6ar6yevzgwzi">同sh4twbox</a>使用兩次reset進行安裝, 第一次reset是把還原區刷入網樂通, 第二次reset是利用還原功能把Debian灌進網樂通主要開機分割區</li>
             <li>刷好之後透過<a href="http://zh.wikipedia.org/zh-tw/PuTTY"><strong>putty</strong></a>(<a href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe">點此下載</a>)等終端軟體使用ssh的方式連入網樂通, 預設的帳號密碼都是<strong>root</strong>, 網路預設是使用DHCP自動取得IP, 想知道網樂通被分配到的IP可以由IP分享器的管理介面查看分配到的IP</li>
-            <li>成功登入後輸入命令<strong>lsb_release -a</strong>, 按下Enter得到結果有看到一行Distributor ID: Debian開頭的字串就表示成功了</li>
+            <li>成功登入後輸入命令<code><strong>lsb_release -a</strong></code>, 按下Enter得到結果有看到一行Distributor ID: Debian開頭的字串就表示成功了</li>
             <li>接下來就可以開始做你想做的事情, 包括使用Apache架設網站、使用Transmission下載BT、使用Samba架設檔案伺服器等...只需要透過apt-get這個指令就行了!</li>
           </ol>
         </p>
@@ -45,8 +45,8 @@
           <li class="active"><a href="#">只有在Debian系列會用到的</a></li>
           <li><a href="#">大部分Linux都會用到的</a></li>
         </ol>
-          安裝套件：apt-get install  /  移除套件：apt-get remove / 搜尋套件：apt-cache search<br />
-          例如：apt-get install vim，就是安裝vim這套軟體，關於apt-get的詳細用法可以參考這邊：<a href="http://nathan-inlinux.blogspot.tw/2013/05/apt-get.html">http://nathan-inlinux.blogspot.tw/2013/05/apt-get.html</a>
+          安裝套件：<code>apt-get install</code>、 移除套件：<code>apt-get remove</code> 、搜尋套件：<code>apt-cache search</code><br />
+          例如：<code>apt-get install vim</code>，就是安裝vim這套軟體，關於apt-get的詳細用法可以參考這邊：<a href="http://nathan-inlinux.blogspot.tw/2013/05/apt-get.html">http://nathan-inlinux.blogspot.tw/2013/05/apt-get.html</a>
           <hr />
           另外這邊提供一些常用linux命令的資料參考：
           <ul>
