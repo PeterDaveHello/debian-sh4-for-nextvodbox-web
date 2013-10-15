@@ -61,7 +61,7 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#webServer">
-          網頁伺服器安裝（泛指架站）
+          架設網頁伺服器（一般俗稱的架站）
         </a>
       </h4>
     </div>
@@ -99,6 +99,65 @@
       </div>
     </div>
   </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#transmission">
+          當成BT下載機
+        </a>
+      </h4>
+    </div>
+    <div id="transmission" class="panel-collapse collapse">
+      <div class="panel-body">
+        <ol class="breadcrumb" id="handbook">
+          <li class="active"><a href="#">Transmission安裝</a></li>
+          <li><a href="#">基本使用</a></li>
+          <li><a href="#">進階使用</a></li>
+        </ol>
+        <p class="text-primary">
+          Transmision是在Linux作業系統上最多人使用的一套BT客戶端軟體，由於我們不使用網樂通本身的圖形界面(效能不好)，這邊僅須要安裝Transmission的常駐程式以及命令列界面即可，安裝命令如下：
+          <code>apt-get install <strong>transmission-daemon</strong></code><br />
+          (如果普通在一般電腦上面的安裝通常是直接安裝transmission而不是transmission-daemon)<hr />
+          安裝好後我們可以輸入這樣的指令確認是否已經安裝並且成功執行：<code>/etc/init.d/transmission-daemon status</code>，如果看到這樣的訊息就表示成功了：
+          <div class="alert cli">[ <span class="cli-g">ok</span> ] transmission-daemon is running.</div>
+          確認成功安裝之後，接下來我們要修改設定檔，你可以使用nano、vim、或任何的文字編輯軟體，這邊以vim為例，編輯Transmission的設定檔，命令如下：<code>vim /etc/transmission-daemon/settings.json</code>，然後我們找到這一行設定：
+          <div class="alert cli">"rpc-whitelist": "127.0.0.1",</div>
+          這邊的設定將會非常重要，如果您只會使用一台電腦連線控制網樂通進行下載的工作的話(通常不會)，就把127.0.0.1改成那台電腦的IP(而且那台電腦拿到的IP要是固定的，否則要會要常改設定)，通常做法是把這邊的IP填入網樂通的IP，並且把最後一段用萬用字元星號取代(*)，讓同網段的IP都能夠存取，例如網樂通得IP如果是192.168.1.7就把這邊的127.0.0.1改成192.168.1.*，這樣應該位於家中的大部分電腦都可以順利連上網樂通了！當然也有*.*.*.*這種不限定任何IP的設定，不過相對安全性較低，不建議使用！這邊改完後就可以存檔離開了，這邊範例的改法為：
+          <div class="alert cli">"rpc-whitelist": "192.168.1.*",</div>
+          存檔離開後我們使用這樣的命令讓Transmission重新載入我們剛剛修改過的設定檔：<code>/etc/init.d/transmission-daemon reload</code>，成功的話將看到這樣的訊息：
+          <div class="alert cli">[ <span class="cli-g">ok</span> ] Reloading bittorrent daemon: transmission-daemon.</div>
+          接下來請打開瀏覽器(開瀏覽器的電腦IP要符合剛剛設定的範圍才行！例如192.168.1.99就符合我剛剛設定的192.168.1.*)，並且在網址列打上你的IP，後面加上冒號以及數字9191，這邊輸入的都是半形的字元，例如我的網樂通IP是192.168.1.7，我就打：<code>192.168.1.7:9091</code>，按下Enter後如果看到要輸入帳號密碼的對話框就成功了！預設的帳號密碼皆為<strong>transmission</strong>，到目前為止你已經有一個簡單的網頁見面可以操作BT下載囉！
+          <hr />
+          修改帳號密碼/中文介面/進階使用...待續!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#samba">
+          Samba檔案伺服器
+        </a>
+      </h4>
+    </div>
+    <div id="samba" class="panel-collapse collapse">
+      <div class="panel-body">
+        <ol class="breadcrumb" id="handbook">
+          <li class="active"><a href="#">Samba安裝</a></li>
+          <li><a href="#">使用</a></li>
+        </ol>
+        <p class="text-primary">
+          撰寫中...
+        </p>
+      </div>
+    </div>
+  </div>
+
+
 </div>
+
 
 <? require_once("template/footer.php");?>
