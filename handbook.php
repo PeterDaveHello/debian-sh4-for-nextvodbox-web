@@ -82,21 +82,13 @@
           (若不需要到動態網頁以及資料庫的部份則可以只安裝apache2！)
           <ul>
             <li>Apache 2.x 安裝命令:</li>
-            <div class="panel panel-default panel-body">
-              apt-get install <strong>apache2</strong>
-            </div>
+            <code>apt-get install <strong>apache2</strong></code>
             <li>PHP 5.x 安裝命令:</li>
-            <div class="panel panel-default panel-body">
-              apt-get install <strong>php5</strong>
-            </div>
+            <code>apt-get install <strong>php5</strong></code>
             <li>Mysql 5.x 安裝命令(安裝過程中要設定管理員密碼，需要輸入兩次):</li>
-            <div class="panel panel-default panel-body">
-              apt-get install <strong>mysql-server</strong>
-            </div>
+            <code>apt-get install <strong>mysql-server</strong></code>
             <li>安裝php的時候apt-get會自動幫我們把libapache2-mod-php5加入安裝清單，所以不須另外安裝，而php要存取mysql資料庫時所需要的套件apt-get不會自動幫我們加入安裝清單，必須另外安裝，命令如下：</li>
-            <div class="panel panel-default panel-body">
-              apt-get install <strong>php5-mysql</strong>
-            </div>
+            <code>apt-get install <strong>php5-mysql</strong></code>
           </ul>
           以上安裝順利完成之後就已經完成http網頁伺服器的架設，並且支援PHP動態產生網頁以及能夠存取mysql資料庫了！<br />
           在自己的電腦上面打開瀏覽器，在網址列的地方輸入網樂通的IP並且按下Enter！<br />
