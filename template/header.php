@@ -9,7 +9,7 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" rel="stylesheet" />
     <style>
-      body {padding-top: 60px;}
+      body {padding-top: 40px;}
       .cli {color: #B2B2B2; background-color: #111111; border-color: #707070; padding: 5px 18px; letter-spacing: 1px;}
       .cli-g {color: #009900; font-weight: bolder;}
       .cli-r {color: #FF0000; font-weight: bolder;}
