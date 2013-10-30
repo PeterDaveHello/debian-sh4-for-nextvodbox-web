@@ -10,9 +10,10 @@
           本專案由"<strong>網樂通開發/研究/貢獻/準開發者</strong>"社團發起，希望能在網樂通上面移植一套完整的Debian GNU/Linux作業系統，讓網樂通能有更好的發揮，也讓新手更容易加入與學習。
         </p>
         <hr />
-        <hr />
         <p class="text-muted">
-          網站目前處於建制初期，內容會陸續補齊，如果您有任何建議或是興趣加入內容的撰寫維護歡迎聯絡我們。
+          網站目前處於建製初期，內容尚有許多殘缺，未來將會陸續補齊<br />
+          若您有任何建議或是興趣加入內容的撰寫維護歡迎聯絡我們、直接從<a href="https://github.com/PeterDaveHello/debian-sh4-for-nextvodbox-web">Github</a>上面動手。<br />
+          本站最佳瀏覽解析度為：1920 x 1080
         </p>
 
 <? require_once("template/footer.php");?>
