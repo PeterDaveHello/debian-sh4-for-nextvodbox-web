@@ -1,4 +1,5 @@
 <? require_once("template/header.php");?>
+  <style>.jumbotron{height:813px}</style>
   <center>
     您要找的頁面不存在 - 404 Error<br />
     可能是本頁面正在製作/修改中，或是您輸入了一個不存在的路徑<br />

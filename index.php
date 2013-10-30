@@ -1,5 +1,6 @@
 <? require_once("template/header.php");?>
 
+    <style>.jumbotron{height:813px}</style>
     <center><img src="img/box.png"></center>
       <hr />
         <p class="lead text-primary">
