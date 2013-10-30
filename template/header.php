@@ -9,6 +9,7 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" rel="stylesheet" />
     <style>
+      a:hover{text-decoration:none}
       body {padding-top: 40px;}
       #hosting {padding-right:10px; font-style:oblique;}
       .cli {color: #B2B2B2; background-color: #111111; border-color: #707070; padding: 5px 18px; letter-spacing: 1px; line-height: 1.35}
