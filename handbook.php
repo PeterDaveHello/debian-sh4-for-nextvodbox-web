@@ -9,21 +9,45 @@
         </a>
       </h4>
     </div>
-    <div id="installOS" class="panel-collapse collapse in">
+    <div id="installOS" class="panel-collapse collapse">
       <div class="panel-body">
         <ol class="breadcrumb" id="handbook">
-          <li class="active"><a href="#">概念</a></li>
-          <li><a href="#">製作刷機隨身碟</a></li>
+          <li class="active"><a href="#">製作刷機隨身碟</a></li>
           <li><a href="#">用隨身碟把還原磁區刷進網樂通</a></li>
           <li><a href="#">用還原磁區把安裝系統</a></li>
         </ol>
         <p class="text-primary">
-          大致概念如下(詳細流程編寫中):
           <ol>
-            <li>先下載<strong>自動刷機檔刷</strong>，解壓縮後使用<a href="http://sourceforge.net/projects/win32diskimager/"><strong>Win32DiskImager</strong></a>(在windows系統)，或<a href="http://linux.vbird.org/linux_basic/0240tarcompress.php#dd"><strong>dd</strong></a>(在linux,Mac,FreeBSD等*nix系統)等方式寫入隨身碟</li>
-            <li>使用方式<a href="https://docs.google.com/document/d/1UWJxV8N8fbvjcvePgrruRmZuJwPseCyHZvebNddeYWc/pub#h.6ar6yevzgwzi">同sh4twbox</a>使用兩次reset進行安裝, 第一次reset是把還原區刷入網樂通, 第二次reset是利用還原功能把Debian灌進網樂通主要開機分割區</li>
-            <li>刷好之後透過<a href="http://zh.wikipedia.org/zh-tw/PuTTY"><strong>putty</strong></a>(<a href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe">點此下載</a>)等終端軟體使用ssh的方式連入網樂通, 預設的帳號密碼都是<strong>root</strong>, 網路預設是使用DHCP自動取得IP, 想知道網樂通被分配到的IP可以由IP分享器的管理介面查看分配到的IP</li>
-            <li>成功登入後輸入命令<code><strong>lsb_release -a</strong></code>, 按下Enter得到結果有看到一行Distributor ID: Debian開頭的字串就表示成功了</li>
+            <li>
+              先下載<strong>自動刷機檔刷</strong>(7z壓縮檔)，解壓縮後使用<a href="http://sourceforge.net/projects/win32diskimager/"><strong>Win32DiskImager</strong></a>，或<a href="http://linux.vbird.org/linux_basic/0240tarcompress.php#dd"><strong>dd</strong></a>方式寫入隨身碟，請參考底下說明。<br />
+              <ul>
+              <li>
+                Windows作業系統：<br />請下載Win32DiskImager後解壓縮，執行主程式後點選資料夾的圖示打開刷機檔"new-debian-wheezy-sh4.img"，把Device選擇對應的隨身碟後點選"Write"<small>(寫入)</small>、"Yes"<small>(確定覆蓋隨身碟)</small>，就會開始進行製作刷機隨身碟的工作！
+              </li>
+              <li>
+                Unix-like系統，如Linux, Mac OS X, FreeBSD：<br />在command line環境切到刷機檔所在的目錄，輸入這樣的命令即可：<small>(別忘了把sdx換成你的隨身碟代號！例如sdb)</small><br />
+                <code>dd if=new-debian-wheezy-sh4.img of=/dev/sdx bs=1M</code>
+              </li>
+              </ul>
+            </li>
+            <li>
+             使用方式同sh4twbox 0.7<small>(或更早)</small>版，使用兩次的reset進行安裝, 第一次reset是把還原區刷入網樂通, 第二次reset是利用還原功能把還原區內的Debian映像檔灌進網樂通主要開機分割區，方法如下：<br />
+             <small>(請注意都是從斷電狀態開始的，請把網路接上有具備自動發放IP功能的"<a href="http://gordon168.tw/?p=553">IP分享器</a>"上以便觀察)</small>
+             <ul>
+               <li>插入刷機隨身碟，利用迴紋針或是黑髮夾、退片針等工具垂直插入網樂通前方的reset孔<strong>不放</strong>，將網樂通通電開機並在觀察到前面板的燈號閃爍<strong>三次</strong>後放開reset，此時會開始將還原映像檔刷入網樂通的還原區，此時可以至IP分享器管理界面觀察，如果有觀察到網樂通出現在裝置列表就可以關電源完成第一步reset，沒有接網路的話稍待5分鐘後也可以關電源完成第一步reset。</li>
+               <li>第二步reset請不要插入刷機隨身碟，同樣按住reset孔<strong>不放</strong>，將網樂通通電開機並在觀察到前面板的燈號閃爍<strong>三次</strong>後放開reset，進行從還原區還原至開機分割區的動作，第二次的reset完成後不需要斷電即可使用，請至IP分享器管理界面觀察，觀察到網樂通出現在裝置列表就表示完成了！<small>(沒接IP分享器的話reset五分鐘後請自行處置)</small></li>
+              </ul>
+            </li>
+            <li>刷好之後透過<a href="http://zh.wikipedia.org/zh-tw/PuTTY"><strong>PuTTY</strong></a>(<a href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe">點此下載</a>)等終端軟體使用ssh的方式連入網樂通, 預設的帳號密碼都是<strong>root</strong>, 網路預設是使用DHCP自動取得IP, 想知道網樂通的IP請由IP分享器的管理界面或是網樂通的console界面查看，PuTTY使用教學可以參考<a href="http://www.cs.nctu.edu.tw/cswebsite/">交大資工</a>的"<a href="http://help.cs.nctu.edu.tw/help/index.php/HOWTO_-_%E4%BD%BF%E7%94%A8PuTTY%E7%99%BB%E5%85%A5%E7%B3%BB%E4%B8%8A%E5%B7%A5%E4%BD%9C%E7%AB%99">HOWTO - 使用PuTTY登入系上工作站</a>"或是<a href="http://ascc.sinica.edu.tw/iascc/">中研院計算中心</a>的"<a href="http://www.ascc.sinica.edu.tw/putty">putty 入門 教學</a>"</li>
+            <li>
+              登入後輸入命令<code><strong>lsb_release -a</strong></code>, 按下Enter得到結果類似如下有一行Distributor ID: Debian字串就表示成功了！
+              <div class="alert cli">
+              Distributor ID:   Debian<br />
+              Description:  Debian GNU/Linux 7.0 (wheezy)<br />
+              Release:    7.0<br />
+              Codename:   wheezy<br />
+              </div>
+            </li>
             <li>接下來就可以開始做你想做的事情, 包括使用Apache架設網站、使用Transmission下載BT、使用Samba架設檔案伺服器等...只需要透過apt-get這個指令就行了!</li>
           </ol>
         </p>
@@ -46,7 +70,7 @@
           <li><a href="#">大部分Linux都會用到的</a></li>
         </ol>
           安裝套件：<code>apt-get install</code>、 移除套件：<code>apt-get remove</code> 、搜尋套件：<code>apt-cache search</code><br />
-          例如：<code>apt-get install vim</code>，就是安裝vim這套軟體，關於apt-get的詳細用法可以參考這邊：<a href="http://nathan-inlinux.blogspot.tw/2013/05/apt-get.html">http://nathan-inlinux.blogspot.tw/2013/05/apt-get.html</a>
+          例如：<code>apt-get install vim</code>，就是安裝vim這套軟體，關於apt-get的詳細用法可以參考這邊：<a href="http://nathan-inlinux.blogspot.tw/2013/05/apt-get.html">http://ppt.cc/724~</a>
           <hr />
           另外這邊提供一些常用linux命令的資料參考：
           <ul>
@@ -116,7 +140,7 @@
           <li><a href="#">進階使用</a></li>
         </ol>
         <p class="text-primary">
-          Transmision是在Linux作業系統上最多人使用的一套BT客戶端軟體，由於我們不使用網樂通本身的圖形界面(效能不好)，這邊僅須要安裝Transmission的常駐程式以及命令列界面即可，安裝命令如下：
+          <a href="http://zh.wikipedia.org/wiki/Transmission">Transmision</a>是在Linux作業系統上最多人使用的一套BT客戶端軟體，由於我們不使用網樂通本身的圖形界面(效能不好)，這邊僅須要安裝Transmission的常駐程式以及命令列界面即可，安裝命令如下：
           <code>apt-get install <strong>transmission-daemon</strong></code><br />
           (如果普通在一般電腦上面的安裝通常是直接安裝transmission而不是transmission-daemon)<hr />
           安裝好後我們可以輸入這樣的指令確認是否已經安裝並且成功執行：<code>/etc/init.d/transmission-daemon status</code>，如果看到這樣的訊息就表示成功了：
@@ -150,7 +174,23 @@
           <li><a href="#">使用</a></li>
         </ol>
         <p class="text-primary">
-          撰寫中...
+          <a href="http://zh.wikipedia.org/wiki/Samba">Samba</a>是在各種*nix系統上非常普遍被使用的資源共享軟體，我們經常使用Samba來架設檔案伺服器以及印表機伺服器，使用Samba架設的檔案伺服器可以讓Windows以及各種Unix-like的作業系統輕鬆的存取伺服器上的檔案資源，透過這樣的檔案伺服器我們也可以輕易的作到網路影音串流的功能，這邊會示範檔案伺服器架設的部份，Samba的安裝命令如下：<br />
+          <code>apt-get install <strong>samba</strong></code><br />
+          安裝好後我們可以輸入這樣的指令確認是否已經安裝並且成功執行：<code>/etc/init.d/samba status</code>，如果看到這樣的訊息就表示成功了：
+          <div class="alert cli">
+            [ <span class="cli-g">ok</span> ] nmbd is running.<br />
+            [ <span class="cli-g">ok</span> ] smbd is running.
+          </div>
+          確認安裝成功後，接下來要把決定分享哪些目錄以及分享出來的權限等相關設定寫入設定檔，你可以使用nano、vim、或任何的文字編輯軟體來作編輯設定檔的工作，samba server的設定檔位於位於/etc/samba/smb.conf，這邊以vim為例，命令如下：<code>vim /etc/samba/smb.conf</code>開啟後在檔案最下方加入分享設定，每個人會需要使用到的設定不盡相同，這邊僅以在家中基本使用到的功能舉例：
+          <div class="alert cli">
+            [Samba]<br >
+            path = /media/sdb2<br >
+            public = yes<br >
+            writable = yes<br >
+            guest ok = yes
+          </div>
+          <hr />
+          待續...
         </p>
       </div>
     </div>
