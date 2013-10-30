@@ -13,6 +13,14 @@
       .cli {color: #B2B2B2; background-color: #111111; border-color: #707070; padding: 5px 18px; letter-spacing: 1px; line-height: 1.35}
       .cli-g {color: #009900; font-weight: bolder;}
       .cli-r {color: #FF0000; font-weight: bolder;}
+      #forkongithub a{background:#ddd;color:#777;text-decoration:none;font-family:monospace, arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:13px;line-height:3.5rem;position:relative;transition:0.5s;}
+      #forkongithub a:hover{background:#222;color:#ddd;}
+      #forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;right:0;height:1px;background:#eee;}
+      #forkongithub a::after{bottom:1px;top:auto;}
+      @media screen and (min-width:1000px){
+        #forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;}
+        #forkongithub a{width:300px;position:absolute;top:88px;right:-95px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:3px 3px 7px rgba(0,0,0,0.8);line-height:2.5rem}
+      }
     </style>
   </head>
   <body>
@@ -42,6 +50,7 @@
         </ul>
       </div>
     </nav>
+      <span id="forkongithub"><a href="https://github.com/PeterDaveHello/debian-sh4-for-nextvodbox-web">Fork me on GitHub</a></span>
     <br />
     <div class="jumbotron">
       <div class="container">
