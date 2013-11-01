@@ -21,7 +21,7 @@
       #forkongithub a::after{bottom:1px;top:auto;}
       @media screen and (min-width:1000px){
         #forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;}
-        #forkongithub a{width:300px;position:fixed;top:88px;right:-95px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:3px 3px 7px rgba(0,0,0,0.8);line-height:2.5rem}
+        #forkongithub a{width:300px;position:fixed;top:95px;right:-88px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:3px 3px 7px rgba(0,0,0,0.8);line-height:2.5rem}
       }
     </style>
   </head>
@@ -52,7 +52,7 @@
         </ul>
       </div>
     </nav>
-      <span id="forkongithub"><a href="https://github.com/PeterDaveHello/debian-sh4-for-nextvodbox-web">Fork me on GitHub</a></span>
+      <span id="forkongithub"><a href="https://github.com/PeterDaveHello/debian-sh4-for-nextvodbox-web">Contribute on GitHub</a></span>
     <br />
     <div class="jumbotron">
       <div class="container">
