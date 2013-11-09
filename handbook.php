@@ -40,15 +40,18 @@
             </li>
             <li>刷好之後透過<a href="http://zh.wikipedia.org/zh-tw/PuTTY"><strong>PuTTY</strong></a>(<a href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe">點此下載</a>)等終端軟體使用ssh的方式連入網樂通, 預設的帳號密碼都是<strong>root</strong>, 網路預設是使用DHCP自動取得IP, 想知道網樂通的IP請由IP分享器的管理界面或是網樂通的console界面查看，PuTTY使用教學可以參考<a href="http://www.cs.nctu.edu.tw/cswebsite/">交大資工</a>的"<a href="http://help.cs.nctu.edu.tw/help/index.php/HOWTO_-_%E4%BD%BF%E7%94%A8PuTTY%E7%99%BB%E5%85%A5%E7%B3%BB%E4%B8%8A%E5%B7%A5%E4%BD%9C%E7%AB%99">HOWTO - 使用PuTTY登入系上工作站</a>"或是<a href="http://ascc.sinica.edu.tw/iascc/">中研院計算中心</a>的"<a href="http://www.ascc.sinica.edu.tw/putty">putty 入門 教學</a>"</li>
             <li>
-              登入後輸入命令<code><strong>lsb_release -a</strong></code>, 按下Enter得到結果類似如下有一行Distributor ID: Debian字串就表示成功了！
+              登入後看到這個畫面就表示成功了!
               <div class="alert cli">
-              Distributor ID:   Debian<br />
-              Description:  Debian GNU/Linux 7.0 (wheezy)<br />
-              Release:    7.0<br />
-              Codename:   wheezy<br />
+                The programs included with the Debian GNU/Linux system are free software;<br />
+                the exact distribution terms for each program are described in the<br />
+                individual files in /usr/share/doc/*/copyright.<br />
+                <br />
+                Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br /><br />
+                permitted by applicable law.<br />
+                root@debian-wheezy-sh4:~#
               </div>
             </li>
-            <li>接下來就可以開始做你想做的事情, 包括使用Apache架設網站、使用Transmission下載BT、使用Samba架設檔案伺服器等...只需要透過apt-get這個指令就行了!</li>
+            <li>接下來就可以開始做你想做的事情, 包括使用Apache+PHP+Mysql架設網站、使用Transmission下載BT、使用Samba架設檔案伺服器等...只需要透過apt-get這個指令把需要的套件安裝好就行了!</li>
           </ol>
         </p>
       </div>
@@ -65,18 +68,20 @@
     </div>
     <div id="command" class="panel-collapse collapse">
       <div class="panel-body">
-        <ol class="breadcrumb" id="handbook">
-          <li class="active"><a href="#">只有在Debian系列會用到的</a></li>
-          <li><a href="#">大部分Linux都會用到的</a></li>
-        </ol>
-          安裝套件：<code>apt-get install</code>、 移除套件：<code>apt-get remove</code> 、搜尋套件：<code>apt-cache search</code><br />
-          例如：<code>apt-get install vim</code>，就是安裝vim這套軟體，關於apt-get的詳細用法可以參考這邊：<a href="http://nathan-inlinux.blogspot.tw/2013/05/apt-get.html">http://ppt.cc/724~</a>
-          <hr />
-          另外這邊提供一些常用linux命令的資料參考：
-          <ul>
-            <li><a href="http://ms.ntcb.edu.tw/~steven/tips/command.htm">Linux 常用指令 - Steven's Linux Note</a></li>
-            <li><a href="http://wiki.ubuntu-tw.org/index.php?title=%E6%8C%87%E4%BB%A4">GNU/Linux 常用指令 - Ubuntu 正體中文 Wiki</a></li>
-          </ul>
+        apt是在Debian系統用來安裝/更新/移除套件的工具，常見的用法舉例如下~<small>(後面請接套件名稱)</small><br />
+        安裝套件：<code>apt-get install</code>、 移除套件：<code>apt-get remove</code>、升級套件：<code>apt-get upgrade</code>、搜尋套件：<code>apt-cache search</code>、更新套件庫資訊：<code>apt-get update</code><br /><br />
+        例如：<br />
+        <code>apt-get update</code> 就是把套件的資訊跟套件庫同步<small>(更新)</small><br />
+        <code>apt-get install vim</code> 就是安裝vim這套軟體<br />
+        <code>apt-get remove vim</code> 就是移除vim這套軟體<br />
+        而<code>apt-cache search transmission</code>則可以搜尋套件名稱/說明資訊內含有transmission字眼的套件，搭配grep來使用可以有效找出我們需要的套件，例如<code>apt-cache search <strong>php</strong> | grep <strong>mysql</strong></code>可以幫助我們有效、快速的找出PHP的mysql module！<br /><br />
+        關於apt-get的詳細用法可以參考這邊：<a href="http://nathan-inlinux.blogspot.tw/2013/05/apt-get.html">http://ppt.cc/724~</a>
+        <hr />
+        另外這邊提供一些常用linux命令的資料參考：
+        <ul>
+          <li><a href="http://ms.ntcb.edu.tw/~steven/tips/command.htm">Linux 常用指令 - Steven's Linux Note</a></li>
+          <li><a href="http://wiki.ubuntu-tw.org/index.php?title=%E6%8C%87%E4%BB%A4">GNU/Linux 常用指令 - Ubuntu 正體中文 Wiki</a></li>
+        </ul>
       </div>
     </div>
   </div>
