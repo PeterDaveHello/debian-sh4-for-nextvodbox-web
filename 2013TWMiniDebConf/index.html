@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Debian GNU/Linux Wheezy on NextVODBox</title>
+    <meta name="description" content="Presentation on DebianTaiwan MiniDebConf2013">
+    <meta name="author" content="Peter Dave Hello">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="reveal.js/lib/css/print/pdf.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <style>
+     h1, h2, h3, h4, h5, h6 {text-transform: none !important}
+     img {border: 0px !important}
+     small {vertical-align: middle !important}
+     pre {width: 95% !important}
+    </style>
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <div class="slides">
+        <section>
+          <section>
+            <h2>Debian GNU/Linux<br />on<br />NextVODBox</h2>
+            <br />
+            <hr />
+            <p>
+              <h4>A FREE set-top box base on SuperH architecture</h4>
+              <h4><i>(Raspberry Pi Taiwanese version?)</i></h4>
+            </p>
+            <br />
+            <small><a href="https://github.com/PeterDaveHello">Peter Hsu</a></small>
+          </section>
+
+          <section>
+            <img src="qrcode.svg" width="90%" height="90%" /><br />
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Peter Hsu</h2>
+            <hr />
+            <p>
+              <ul>
+                <li>A Debian GNU/Linux user</li>
+                <li>A free & open source software user</li>
+                <li>A student from Yuan Zu University</li>
+                <li>One of the main deb package builders in NextVODBox developer group</li>
+                <li><a href="http://forum.cse.yzu.edu.tw/rpi/" title="Raspberry Pi@TW unofficial OS download mirror">http://forum.cse.yzu.edu.tw/rpi/</a> maintainer<br /><small>(Raspberry Pi OS download mirror)</small></li>
+                <li><a href="http://forum.cse.yzu.edu.tw/debian-sh4/" title="Debian Wheezy sh4 for NextVODBox, website & repo">http://forum.cse.yzu.edu.tw/debian-sh4/</a> maintainer<br /><small>(Repositry and websites, manual)</small></li>
+              </ul>
+            </p>
+          </section>
+
+          <section>
+          <img src="github.png" />
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>What is the NextVODBox?</h1>
+          </section>
+
+          <section>
+            <h3>Oh!<br />It's a FREE digital TV set-top box,<br />which based on the SH4.</h3>
+            <img src="img/logo.gif" /> <br />
+            <img src="//forum.cse.yzu.edu.tw/debian-sh4/img/box.png" title="NextVOXBox" />
+          </section>
+
+          <section>
+            <h2>SuperH / SH</h2>
+            <hr />
+            "SuperH<small>(or SH)</small> is a 32-bit reduced instruction set computer <small>(RISC)</small> instruction set architecture <small>(ISA)</small> developed by Hitachi. It is implemented by microcontrollers and microprocessors for embedded systems. The SH-3 and SH-4 architectures support both big-endian and little-endian byte ordering <small>(they are bi-endian)</small>." - <i><a href="http://en.wikipedia.org/wiki/SuperH">Wikipedia</a></i>
+          </section>
+
+          <section>
+            <h4>7/30/2010</h4>
+            <img src="img_2/poster.jpg" />
+          </section>
+
+          <section>
+            <img src="img_2/poster3.jpg" />
+          </section>
+
+          <section>
+            <img src="img/content.jpg" />
+          </section>
+
+          <section>
+            <h2>Spec</h2>
+            <hr />
+            <p style="text-align: left;">
+              <strong>CPU:</strong> <a href="http://www.st.com/internet/imag_video/product/250067.jsp" title="ST-9150 Low-cost advanced HD decoding IC for TV - STMicroelectronics">STMicroelectronics ST-9150BUC</a><br />
+              <strong>RAM:</strong> <a href="http://www.nanya.com/NanyaAdmin/GetFiles.ashx?ID=856">NANYA NT5TU64M16GG-AC</a> <small>(DRAM DDR2 64Mx16 PC800 BGA)</small> x 2<br />
+              <strong>Storage:</strong> Samsung NCDOM08GMS-MLC<br />
+              <strong>Ethernet:</strong> VIA VT6113 10/100 base-TX PHY chip<br />
+              <strong>Flash:</strong> Winbond 25Q80 1MB Spi Flash<br />
+              <strong>Board:</strong> STMicroelectronics PDK7105-SDK board<br />
+              <strong>Power:</strong> 5V x 2A = 10W <small>(max)</small>
+            </p>
+          </section>
+
+          <section>
+            <a href="img/inside.png" title="click here to see huge version"><img src="img/inside_small.png" /></a>
+          </section>
+
+          <section>
+            <img src="img/front.jpg" /><br />
+            <img src="img/back.png" /><br />
+            <img src="img/buttom.png" />
+          </section>
+
+          <section>
+            <h2>Operating systems</h2>
+            <hr />
+            <ul>
+              <li class="fragment" data-fragment-index="1"><a href="https://code.google.com/p/sh4twbox/" title="sh4twbox - Porting Linux System To sh4 based NextVOD IPTV SetupBox - Google Project Hosting">Arch Linux</li>
+              <li class="fragment" data-fragment-index="2">sh4twbox</a></li>
+              <li class="fragment" data-fragment-index="3">Fedora 9* <small>(no webpage, you can download from sh4twbox project's download list)</small></li>
+              <li class="fragment" data-fragment-index="4"><a href="http://nextpbx.osslab.com.tw/" title="NextPBX(Asterisk)">NextPBX<small>(Asterisk)</small></a></li>
+              <li class="fragment" data-fragment-index="5"><a href="http://www.wonderbox.net.tw/tw/nasbox.html" title="WonderBOX">NextNAS<small> (Known as WonderBOX, base on NextPBX, sh4twbox or <strong>Debian</strong>)</small></a></li>
+              <li class="fragment" data-fragment-index="6"><a href="http://forum.cse.yzu.edu.tw/debian-sh4" title="Debian Wheezy sh4 for 網樂通(NextVODBox)"><strong>Debian GNU/Linux Wheezy sh4 for NextVODBox</strong></a></li>
+            </ul>
+          </section>
+
+          <section>
+          <h3>NextPBX screenshot</h3>
+          <hr />
+          <img src="img_2/nextpbx.png" title="NextPBX"/>
+          </section>
+
+          <section>
+          <h3>WonderBOX screenshot</h3>
+          <hr />
+          <img src="img_2/wonderbox.jpg" title="WonderBOX" />
+          </section>
+
+          <section>
+            <h2>Feature</h2>
+            <hr />
+            <ul>
+              <li class="fragment" data-fragment-index="1">Green</li>
+              <li class="fragment" data-fragment-index="2">No noise</li>
+              <li class="fragment" data-fragment-index="3">Low power</li>
+              <li class="fragment" data-fragment-index="4">Small size</li>
+              <li class="fragment" data-fragment-index="5"><strong>FREE</strong></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Application</h2>
+            <hr />
+            <p>
+            <ul>
+              <li class="fragment" data-fragment-index="1">coding</li>
+              <li class="fragment" data-fragment-index="2">arduino</li>
+              <li class="fragment" data-fragment-index="3">web camera</li>
+              <li class="fragment" data-fragment-index="4">vpn/dhcp/nat/proxy/AP</li>
+              <li class="fragment" data-fragment-index="5">VoIP/BT/Web/File server</li>
+              <li class="fragment" data-fragment-index="6">audio/video* player (includes radio)</li>
+              <li class="fragment" data-fragment-index="8"><strong>Learning unix-like os</strong></li>
+            </ul>
+            </p>
+            <small class="fragment" data-fragment-index="7">*driver issue</small>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Let's take a look!</h2>
+            <hr />
+            <p>
+              <img src="img/login.gif" title="terminal"/>
+              Terminal login screenshot
+            </p>
+          </section>
+
+          <section>
+            <h2>Package repositry</h2>
+            <hr />
+            <font color="#FF8330">
+            http://forum.cse.yzu.edu.tw/debian-sh4/ <font color="#FF4791">all</font><br />
+            http://ftp.tw.debian.org/debian/ <font color="#FF4791">main contrib non-free</font><br />
+            http://download.si-linux.co.jp/debian-sh/wheezy-sh4/ <font color="#FF4791">main</font><br />
+            <br />
+            http://1.34.239.30/wheezy-sh4/debian* <font color="#FF4791">main</font>
+            </font>
+            <hr />
+            1419 debs in our repo now! <small>(more than 1k debs are sh4 only)</small>
+          </section>
+
+          <section>
+            <img src="img/mail.jpg" title="Ask for si-linux repo mirror mail">
+          </section>
+
+          <section>
+            <h2>Package Building</h2>
+            <hr />
+            <p>
+              <ol>
+                <li>
+                  apt-get build-dep XXX <small>(build package's dependencies)</small><br />
+                  <small>
+                  ...... the package cannot be found ...... but it is not installable ......cannot be satisfied ...... but is not going to be installed ...... Failed to satisfy Build-Depends dependency ...... </small>
+                </li>
+                <li>apt-get -b source XXX <small>(fetch the source & build the binary package)</small></li>
+                 ...... or ......
+                <li value="2">apt-get source XXX <small>(fetch the source and extract only)</small></li>
+                <small>loop:</small>
+                <li>hacking time! <small> (because it cannot be built automatically)</small></li>
+                <li>debuild <small> (hope it works now! if it failed, go to loop ...)</small></li>
+              </ol>
+            </p>
+            <p>
+              <ul>
+                <li>need dpkg-dev devscripts</li>
+                <li>Depends on si-linux repositry</li>
+                <li>Many packages require manual intervention</li>
+              </ul>
+            </p>
+          </section>
+
+          <section>
+            <a href="https://github.com/PeterDaveHello/deb-auto-build" title="deb-auto-build on github">
+            <h3>deb-auto-build</h3>
+            https://github.com/PeterDaveHello/deb-auto-build
+            </a>
+            <pre>
+            <code>#!/bin/bash -x
+
+REPO="dists/wheezy-sh4/main/binary-sh4"
+
+function build_sub_package()
+{
+    while read package_a; do
+        build_a_package $package_a
+    done
+}
+
+function build_a_package()
+{
+    build_a_package_dep $1;
+    echo "now building $1 ...";
+    tmux rename-window "building $1"
+    apt-get -b source "$1" \
+    && tmux rename-window "moving $1" \
+    && mv *.deb ../apt-repo/${REPO} \
+    && tmux rename-window "rebuilding repo" \
+    && cd ../apt-repo \
+    && dpkg-scanpackages ${REPO} > ${REPO}/Packages \
+    && gzip -c ${REPO}/Packages > ${REPO}/Packages.gz \
+    && tmux rename-window "updating apt db" \
+    && apt-get update \
+    && cd -
+    rm -rf *$1*
+}
+
+function build_a_package_dep()
+{
+    echo "now building $1 dep ...";
+    $?=123
+    until [ "$?" -eq 0 ]
+    do
+        tmux rename-window "building-dep $1"
+        apt-get build-dep "$1" --force-yes -y 2>&1 | grep 'cannot be found' | cut -d ' ' -f 12 | build_sub_package
+        apt-get build-dep "$1" --force-yes -y 2>&1 | grep 'but it is not going to be installed' | cut -d ' ' -f 5 | build_sub_package
+        apt-get build-dep "$1" --force-yes -y 2>&1 | grep 'but it is not installable' | cut -d ' ' -f 5 | build_sub_package
+        apt-get build-dep "$1" --force-yes -y 2>&1 | grep 'Failed to satisfy Build-Depends dependency' | cut -d ' ' -f 9 | build_sub_package
+        apt-get build-dep "$1" --force-yes -y
+    done
+}
+
+if [ "$#" -lt 1 ]; then
+    exit
+elif [ "$#" -eq 1 ]; then
+    if [ "$1" == "--build-dep-only" ]; then
+        exit
+    fi
+fi
+
+tmux rename-window "updating apt db"
+apt-get update
+
+tmux rename-window "upgrading packages"
+apt-get upgrade --force-yes -y
+
+if [ "$1" == "--build-dep-only" ]; then
+    shift
+    for packages in $@
+    do
+        build_a_package_dep $packages
+    done
+else
+    for packages in $@
+    do
+        build_a_package $packages
+    done
+fi
+
+tmux rename-window "Done."</code>
+            </pre>
+            <small>*Replaced packages, apt-get build-dep may not work!</small>
+            <small>*E: Build-Depends dependency for fp-compiler cannot be satisfied because the package fp-compiler cannot be found</small>
+          </section>
+
+          <section>
+            <h2>distcc compile</h2>
+            <hr />
+            <p>
+              compile <strong>nginx</strong> benchmark:<br />
+              <ul>
+              <li>Without distcc: <br />14974.734067 secs</li>
+              <br />
+              <li>With distcc: <small>(parameter, number of machines, how much faster)</small><br />
+                7333.443333 secs, -j9, 3 machines, 2.042 times faster
+                6438.295988 secs, -j12, 4 machines, 2.326 times faster
+              </li>
+              </ul>
+            </p>
+          </section>
+
+          <section>
+            <h2>Repositry Building</h2>
+            <hr />
+            <p>
+              APT Archive Types:
+              <ul>
+                <small>
+                <table border="1" cellpadding="1" cellspacing="1">
+                  <tbody>
+                    <tr>
+                      <td>archive style</td>
+                      <td>apt line</td>
+                      <td>apt-pinning</td>
+                      <td>secure APT</td>
+                      <td>status</td>
+                   </tr>
+                   <tr>
+                      <td>official archive</td>
+                      <td>"deb http://example.tw/deb stable main"</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                      <td>preferred</td>
+                    </tr>
+                    <tr>
+                      <td>trivial archive</td>
+                      <td>"deb http://example.tw/deb ./"</td>
+                      <td>No</td>
+                      <td>Yes</td>
+                      <td>deprecated</td>
+                    </tr>
+                  </tbody>
+                </table>
+                </small>
+              </ul>
+              <br />
+              <br />
+              <ul>
+                <li>The easiest way: <strong>dpkg-scanpackages*</strong><br />scan directories and create Package file</li>
+                <li><strong>apt-ftparchive</strong></li>
+                <li><strong>reprepro</strong> / mini-dinstall / debarchiver / debpool /DebMarshal</li>
+                <li>Debian Archive Kit / mini Debian Archive Kit</li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h2>Kernel</h2>
+            <hr />
+            <ul>
+            <li>Built by cross compiler</li>
+            <li>Current version: 2.6.32.59</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+          <h1>Pictures</h1>
+          </section>
+          <section><img src="pics/100001780723412.jpg" /><br />By: 呂樺</section>
+          <section><img src="pics/1000017807234122.jpg" /><br />By: 呂樺</section>
+          <section><img src="pics/100000155765352.jpg" /><br />By: 劉俊宏</section>
+          <section><img src="pics/asload.jpg" style="max-height: 85%; max-width: 85%;" /><br />By: 侯國賓</section>
+          <section><img src="pics/45so.org3.jpg" style="max-height: 85%;" /><br />By: 吳笑綠</section>
+          <section><img src="pics/45so.org2.jpg" style="max-height: 85%;" /><br />By: 吳笑綠</section>
+          <section><img src="pics/45so.org.jpg" /><br />By: 吳笑綠</section>
+        </section>
+
+        <section>
+          <h2>Advised links</h2>
+          <ul>
+           <li>sh4twbox<br /><a href="https://code.google.com/p/sh4twbox/">https://code.google.com/p/sh4twbox/</a></li>
+           <li>NextVOD unit Hacking - 網樂通改機<br /><a href="http://nextpbx.osslab.com.tw/">http://nextpbx.osslab.com.tw/</a></li>
+           <li>網樂通改機俱樂部(Facebook Group)<br /><a href="https://www.facebook.com/groups/477359555618518/">https://www.facebook.com/groups/477359555618518/</a></li>
+           <li><strong>Debian Wheezy sh4 for 網樂通(NextVODBox)<br /><a href="http://forum.cse.yzu.edu.tw/debian-sh4/">http://forum.cse.yzu.edu.tw/debian-sh4/</a></strong></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Q & A</h1>
+        </section>
+
+        <section>
+          <h2>Thank you!</h2>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.min.js"></script>
+
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+
+  </body>
+</html>
