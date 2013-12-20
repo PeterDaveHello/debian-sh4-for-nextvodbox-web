@@ -25,20 +25,20 @@
                 Windows作業系統：<br />請下載Win32DiskImager後解壓縮，執行主程式後點選資料夾的圖示打開刷機檔"new-debian-wheezy-sh4.img"，把Device選擇對應的隨身碟後點選"Write"<small>(寫入)</small>、"Yes"<small>(確定覆蓋隨身碟)</small>，就會開始進行製作刷機隨身碟的工作！
               </li>
               <li>
-                Unix-like系統，如Linux, Mac OS X, FreeBSD：<br />在command line環境切到刷機檔所在的目錄，輸入這樣的命令即可：<small>(別忘了把sdx換成你的隨身碟代號！例如sdb)</small><br />
+                Unix-like系統，如Linux，Mac OS X，FreeBSD：<br />在command line環境切到刷機檔所在的目錄，輸入這樣的命令即可：<small>(別忘了把sdx換成你的隨身碟代號！例如sdb)</small><br />
                 <code>dd if=new-debian-wheezy-sh4.img of=/dev/sdx bs=1M</code>
               </li>
               </ul>
             </li>
             <li>
-             使用方式同sh4twbox 0.7<small>(或更早)</small>版，使用兩次的reset進行安裝, 第一次reset是把還原區刷入網樂通, 第二次reset是利用還原功能把還原區內的Debian映像檔灌進網樂通主要開機分割區，方法如下：<br />
+             使用方式同sh4twbox 0.7<small>(或更早)</small>版，使用兩次的reset進行安裝，第一次reset是把還原區刷入網樂通，第二次reset是利用還原功能把還原區內的Debian映像檔灌進網樂通主要開機分割區，方法如下：<br />
              <small>(請注意都是從斷電狀態開始的，請把網路接上有具備自動發放IP功能的"<a href="http://gordon168.tw/?p=553">IP分享器</a>"上以便觀察)</small>
              <ul>
                <li>插入刷機隨身碟，利用迴紋針或是黑髮夾、退片針等工具垂直插入網樂通前方的reset孔<strong>不放</strong>，將網樂通通電開機並在觀察到前面板的燈號閃爍<strong>三次</strong>後放開reset，此時會開始將還原映像檔刷入網樂通的還原區，此時可以至IP分享器管理界面觀察，如果有觀察到網樂通出現在裝置列表就可以關電源完成第一步reset，沒有接網路的話稍待5分鐘後也可以關電源完成第一步reset。</li>
                <li>第二步reset請不要插入刷機隨身碟，同樣按住reset孔<strong>不放</strong>，將網樂通通電開機並在觀察到前面板的燈號閃爍<strong>三次</strong>後放開reset，進行從還原區還原至開機分割區的動作，第二次的reset完成後不需要斷電即可使用，請至IP分享器管理界面觀察，觀察到網樂通出現在裝置列表就表示完成了！<small>(沒接IP分享器的話reset五分鐘後請自行處置)</small></li>
               </ul>
             </li>
-            <li>刷好之後透過<a href="http://zh.wikipedia.org/zh-tw/PuTTY"><strong>PuTTY</strong></a>(<a href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe">點此下載</a>)等終端軟體使用ssh的方式連入網樂通, 預設的帳號密碼都是<strong>root</strong>, 網路預設是使用DHCP自動取得IP, 想知道網樂通的IP請由IP分享器的管理界面或是網樂通的console界面查看，PuTTY使用教學可以參考<a href="http://www.cs.nctu.edu.tw/cswebsite/">交大資工</a>的"<a href="http://help.cs.nctu.edu.tw/help/index.php/HOWTO_-_%E4%BD%BF%E7%94%A8PuTTY%E7%99%BB%E5%85%A5%E7%B3%BB%E4%B8%8A%E5%B7%A5%E4%BD%9C%E7%AB%99">HOWTO - 使用PuTTY登入系上工作站</a>"或是<a href="http://ascc.sinica.edu.tw/iascc/">中研院計算中心</a>的"<a href="http://www.ascc.sinica.edu.tw/putty">putty 入門 教學</a>"</li>
+            <li>刷好之後透過<a href="http://zh.wikipedia.org/zh-tw/PuTTY"><strong>PuTTY</strong></a>(<a href="http://the.earth.li/~sgtatham/putty/latest/x86/putty.exe">點此下載</a>)等終端軟體使用ssh的方式連入網樂通，預設的帳號密碼都是<strong>root</strong>，網路預設是使用DHCP自動取得IP，想知道網樂通的IP請由IP分享器的管理界面或是網樂通的console界面查看，PuTTY使用教學可以參考<a href="http://www.cs.nctu.edu.tw/cswebsite/">交大資工</a>的"<a href="http://help.cs.nctu.edu.tw/help/index.php/HOWTO_-_%E4%BD%BF%E7%94%A8PuTTY%E7%99%BB%E5%85%A5%E7%B3%BB%E4%B8%8A%E5%B7%A5%E4%BD%9C%E7%AB%99">HOWTO - 使用PuTTY登入系上工作站</a>"或是<a href="http://ascc.sinica.edu.tw/iascc/">中研院計算中心</a>的"<a href="http://www.ascc.sinica.edu.tw/putty">putty 入門 教學</a>"</li>
             <li>
               登入後看到這個畫面就表示成功了!
               <div class="alert cli">
@@ -51,7 +51,7 @@
                 root@debian-wheezy-sh4:~#
               </div>
             </li>
-            <li>接下來就可以開始做你想做的事情, 包括使用Apache+PHP+Mysql架設網站、使用Transmission下載BT、使用Samba架設檔案伺服器等...只需要透過apt-get這個指令把需要的套件安裝好就行了!</li>
+            <li>接下來就可以開始做你想做的事情，包括使用Apache+PHP+Mysql架設網站、使用Transmission下載BT、使用Samba架設檔案伺服器等...只需要透過apt-get這個指令把需要的套件安裝好就行了!</li>
           </ol>
         </p>
       </div>
