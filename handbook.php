@@ -158,7 +158,19 @@
           <div class="alert cli">[ <span class="cli-g">ok</span> ] Reloading bittorrent daemon: transmission-daemon.</div>
           接下來請打開瀏覽器(開瀏覽器的電腦IP要符合剛剛設定的範圍才行！例如192.168.1.99就符合我剛剛設定的192.168.1.*)，並且在網址列打上你的IP，後面加上冒號以及數字9091，這邊輸入的都是半形的字元，例如我的網樂通IP是192.168.1.7，我就打：<code>192.168.1.7:9091</code>，按下Enter後如果看到要輸入帳號密碼的對話框就成功了！預設的帳號密碼皆為<strong>transmission</strong>，到目前為止你已經有一個簡單的網頁介面可以操作BT下載囉！
           <hr />
-          修改帳號密碼/中文介面/進階使用...待續!
+          設定檔中<code>"rpc-authentication-required"</code>是登入認證設定，<code>rpc-username</code>是登入帳號，<code>rpc-password</code>是登入密碼。
+          在某些情況下會開啟這個功能，例如有開放對外，想從外面連線進來看下載狀況，或位於共用的區域網路。
+          這時就會想要把Transmission頁面設定需要帳密，防止其它人看到下載清單。
+          使用vim開啟設定檔並修改如下：
+          <div class="alert cli">
+          "rpc-authentication-required": true,<br />
+          "rpc-username": "<span class="cli-g">換成你想要的帳號</span>",<br />
+          "rpc-password": "<span class="cli-g">換成你想要的密碼</span>",<br />
+          </div>
+          <code>"rpc-password"</code>預設值雖然是MD5編碼，不過我們直接輸入明碼就可以了，Transmission執行後會自動改為MD5編碼。
+          修改並儲存後,重新載入設定檔即可
+          <hr />
+          中文介面/進階使用...待續!
         </p>
       </div>
     </div>
