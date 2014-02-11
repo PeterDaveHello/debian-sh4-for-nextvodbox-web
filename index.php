@@ -16,4 +16,7 @@
           本站最佳瀏覽解析度為：1920 x 1080
         </p>
 
+        <p class="text-muted">
+          <a href="2013TWMiniDebConf/" style="text-align:center;">網樂通改機介紹分享@Taiwan Debian miniConf 2013</a>
+        </p>
 <? require_once("template/footer.php");?>
