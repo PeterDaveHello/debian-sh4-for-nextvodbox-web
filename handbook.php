@@ -158,7 +158,20 @@
           <div class="alert cli">[ <span class="cli-g">ok</span> ] Reloading bittorrent daemon: transmission-daemon.</div>
           接下來請打開瀏覽器(開瀏覽器的電腦IP要符合剛剛設定的範圍才行！例如192.168.1.99就符合我剛剛設定的192.168.1.*)，並且在網址列打上你的IP，後面加上冒號以及數字9091，這邊輸入的都是半形的字元，例如我的網樂通IP是192.168.1.7，我就打：<code>192.168.1.7:9091</code>，按下Enter後如果看到要輸入帳號密碼的對話框就成功了！預設的帳號密碼皆為<strong>transmission</strong>，到目前為止你已經有一個簡單的網頁介面可以操作BT下載囉！
           <hr />
-          修改帳號密碼/中文介面/進階使用...待續!
+          如果不想使用預設的帳號密碼該怎麼辦呢？總不希望讓大家都可以隨意進來參觀吧！這樣密碼就形同虛設囉～
+          又或者如果主機只有擺在私人網路裡面，不怕不小心被別人看到，登入還要打密碼覺得有點麻煩想取消登入驗證又該怎麼做呢？
+          設定檔中<code>"rpc-authentication-required"</code>是決定登入是否需要認證的設定，預設是<strong>true</strong>，而對應的<code>rpc-username</code>及<code>rpc-password</code>是登入的使用者名稱以及密碼。
+          同樣的我們使用任一文字編輯器開啟設定檔並修改剛剛提到地方，如果不想要登入認證就把<code>"rpc-authentication-required"</code>改為false：
+          <div class="alert cli">"rpc-authentication-required": false,</div>
+          如果是想要改帳號密碼的話就修改這邊：
+          <div class="alert cli">
+          "rpc-username": "<span class="cli-g">換成你想要的帳號</span>",<br />
+          "rpc-password": "<span class="cli-g">換成你想要的密碼</span>",<br />
+          </div>
+          <code>"rpc-password"</code>預設值是使用MD5編碼，不過我們直接輸入明碼就可以了，Transmission執行後會自動改為MD5編碼。
+          修改並儲存後，按照剛剛前面提到的方法重新載入設定檔即可！趕快登入試試看，是否已經成功取消登入驗證/修改帳號密碼了呢？
+          <hr />
+          中文介面/進階使用...待續!
         </p>
       </div>
     </div>
