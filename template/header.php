@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Debian Wheezy sh4 for 網樂通(NextVODBox)</title>
-    <meta property="og:image" content="http://forum.cse.yzu.edu.tw/debian-sh4/img/box.png" />
+    <meta property="og:image" content="http://forum.cse.yzu.edu.tw/Linux/debian-sh4/img/box.png" />
     <meta name="description" content="網樂通用的Debian! Unofficial Debian Wheezy SH4 for Nextvodbox" />
     <meta name="keywords" content="網樂通, nextvodbox, wheezy, sh4, OS, Debian, Linux, RISC, Download" />
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
