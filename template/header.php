@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="dns-prefetch" href="//netdna.bootstrapcdn.com" />
+    <link rel="dns-prefetch" href="//ajax.googleapis" />
     <meta charset="utf-8">
     <title>Debian Wheezy sh4 for 網樂通(NextVODBox)</title>
     <meta property="og:image" content="http://ftp.yzu.edu.tw/Linux/debian-sh4-for-nextvod/img/box.png" />
