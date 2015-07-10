@@ -17,7 +17,7 @@
 
       <h2>apt repositry：</h2>
       <font color="#FF4791">deb</font> <font color="#FF8330">http://ftp.yzu.edu.tw/Linux/debian-sh4-for-nextvod/</font> <font color="#9147FF">wheezy</font> <font color="#FF4791">all</font><br />
-      「使用以上兩個檔案灌的系統不須特別調整此設定，這是讓其他版Debian也能使用到我們套件的套件庫的公開資訊」
+      「請注意，由於上面的系統包打包時的repositry路徑已經無效，請務必手動更新/etc/apt/sources.list」
     </p>
   </div>
 
