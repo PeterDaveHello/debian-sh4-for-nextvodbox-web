@@ -1,7 +1,7 @@
 <? require_once("template/header.php");?>
 
   <div>
-    自動刷機過程請參考<a href="handbook.php">教學</a>，會自行進掛載還原分割區者可直接拿rootfs還原檔去覆蓋原檔<br />apt repo預設不用修改，使用其他版本的Debian GNU/Linux也想用這邊所編譯的套件那就可以掛上這個設定。
+    自動刷機過程請參考<a href="handbook.php">教學</a>，會自行進掛載還原分割區者可直接拿rootfs還原檔去覆蓋原檔<br />apt repo請於安裝完成之後修改，使用其他版本的Debian GNU/Linux也想用這邊所編譯的套件那就可以掛上這個設定。
     <p>
       <h2>自動刷機檔：</h2>(一般刷機都是使用這個即可，已經包含下面兩樣了，不須重複下載、設定)<br />
       <a href="download/new-debian-wheezy-sh4.img.7z">new-debian-wheezy-sh4.img.7z</a>
