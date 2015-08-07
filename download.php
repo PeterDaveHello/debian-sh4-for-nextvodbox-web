@@ -18,6 +18,8 @@
 
       <h2>apt repositry：</h2>
       <font color="#FF4791">deb</font> <font color="#FF8330">http://ftp.yzu.edu.tw/Linux/debian-sh4-for-nextvod/</font> <font color="#9147FF">wheezy</font> <font color="#FF4791">all</font><br />
+      您也可以下載這份已經整理過的 [<a href="download/sources.list">sources.list</a>] 直接覆蓋舊版的/etc/apt/sources.list，更新後請記得執行命令更新本機資料：
+      <code>sudo apt-get update</code>
     </p>
   </div>
 

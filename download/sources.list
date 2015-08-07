@@ -1,0 +1,8 @@
+# /etc/apt/sources.list sample
+# For the latest version, see:
+# https://github.com/PeterDaveHello/debian-sh4-for-nextvodbox-web/blob/master/download/sources.list
+
+deb [arch=all] http://ftp.yzu.edu.tw/debian/ wheezy main contrib non-free
+deb [arch=all] http://free.nchc.org.tw/debian-security/ wheezy/updates main contrib non-free
+deb [arch=sh4] http://download.si-linux.co.jp/debian-sh/wheezy-sh4/ wheezy main contrib non-free
+deb http://ftp.yzu.edu.tw/Linux/debian-sh4-for-nextvod/ wheezy all
