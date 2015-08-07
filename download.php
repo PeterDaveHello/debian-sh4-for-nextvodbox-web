@@ -14,10 +14,10 @@
         -  MD5：1671c292c17feda658b2362db41ecc81<br />
       「單還原檔，可以手動掛載sda1後自行置換原先的target.tgz」
       <hr />
+      <strong>「請注意，由於上面的系統包打包時的repositry路徑已經無效，請務必手動更新/etc/apt/sources.list」</strong><br /><br />
 
       <h2>apt repositry：</h2>
       <font color="#FF4791">deb</font> <font color="#FF8330">http://ftp.yzu.edu.tw/Linux/debian-sh4-for-nextvod/</font> <font color="#9147FF">wheezy</font> <font color="#FF4791">all</font><br />
-      「請注意，由於上面的系統包打包時的repositry路徑已經無效，請務必手動更新/etc/apt/sources.list」
     </p>
   </div>
 
