@@ -1,3 +1,4 @@
 Release
 dists/wheezy/*
-download/*
+download/*.7z
+download/*.tgz
