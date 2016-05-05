@@ -1,4 +1,4 @@
-<? require_once("template/header.php");?>
+<?php require_once("template/header.php");?>
 <div class="panel-group" id="accordion">
 
   <div class="panel panel-default">
@@ -218,4 +218,4 @@
 </div>
 
 
-<? require_once("template/footer.php");?>
+<?php require_once("template/footer.php");?>

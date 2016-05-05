@@ -1,4 +1,4 @@
-<? require_once("template/header.php");?>
+<?php require_once("template/header.php");?>
 
     <style>.jumbotron{height:813px}</style>
     <center><img src="img/box.png"></center>
@@ -19,4 +19,4 @@
         <p class="text-muted">
           <a href="2013TWMiniDebConf/" style="text-align:center;">網樂通改機介紹分享@Taiwan Debian miniConf 2013</a>
         </p>
-<? require_once("template/footer.php");?>
+<?php require_once("template/footer.php");?>

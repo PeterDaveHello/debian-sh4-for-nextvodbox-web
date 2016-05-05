@@ -1,4 +1,4 @@
-<? require_once("template/header.php");?>
+<?php require_once("template/header.php");?>
 
   <div>
     自動刷機過程請參考<a href="handbook.php">教學</a>，會自行進掛載還原分割區者可直接拿rootfs還原檔去覆蓋原檔<br />apt repo請於安裝完成之後修改，使用其他版本的Debian GNU/Linux也想用這邊所編譯的套件那就可以掛上這個設定。
@@ -23,4 +23,4 @@
     </p>
   </div>
 
-<? require_once("template/footer.php");?>
+<?php require_once("template/footer.php");?>
